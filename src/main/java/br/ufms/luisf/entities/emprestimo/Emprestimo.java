@@ -1,6 +1,5 @@
 package br.ufms.luisf.entities.emprestimo;
 
-import br.ufms.luisf.entities.item_emprestimo.ItemEmprestimo;
 import br.ufms.luisf.validadores.Validar;
 
 import java.time.LocalDateTime;
@@ -16,7 +15,13 @@ public class Emprestimo {
     StatusEmprestimo status;
     String observacoes;
 
-    List<ItemEmprestimo> itens;
+    public Emprestimo(UUID id, UUID usuarioId, LocalDateTime dataEmprestimo, LocalDateTime dataPrevistaDevolucao, LocalDateTime dataDevolucao, StatusEmprestimo status, String observacoes) {
+        this.id = id;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
+        this.status = status;
+        this(usuarioId, dataPrevistaDevolucao, observacoes);
+    }
 
     public Emprestimo(UUID usuarioId, LocalDateTime dataPrevistaDevolucao) {
         this(usuarioId, dataPrevistaDevolucao, null);
@@ -85,12 +90,4 @@ public class Emprestimo {
         this.observacoes = Validar.validarDescricaoOpcional(observacoes);
     }
     //endregion
-
-    public boolean adicionarItem(ItemEmprestimo item) {
-        return this.itens.add(item);
-    }
-
-    public boolean removerItem(ItemEmprestimo item) {
-        return this.itens.remove(item);
-    }
 }

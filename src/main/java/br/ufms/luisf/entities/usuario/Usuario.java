@@ -17,8 +17,13 @@ public class Usuario {
     LocalDateTime dataCadastro;
     StatusUsuario status;
 
-    List<Emprestimo> emprestimos;
-    List<Reserva> reservas;
+    public Usuario(UUID id, String nome, String email, String telefone, LocalDateTime dataCadastro, StatusUsuario status) {
+        this.id = id;
+        this.dataCadastro = dataCadastro;
+        this.status = status;
+
+        this(nome, email, telefone);
+    }
 
     public Usuario(String nome, String email, String telefone) {
         this.id = UUID.randomUUID();
@@ -28,8 +33,6 @@ public class Usuario {
         this.dataCadastro = LocalDateTime.now();
         setStatus(StatusUsuario.ATIVO);
 
-        this.emprestimos = new ArrayList<>();
-        this.reservas = new ArrayList<>();
     }
 
     public Usuario(String nome, String email) {
@@ -62,14 +65,6 @@ public class Usuario {
         return status;
     }
 
-    public List<Reserva> getReservas() {
-        return List.copyOf(reservas);
-    }
-
-    public List<Emprestimo> getEmprestimos() {
-        return List.copyOf(emprestimos);
-    }
-
     //endregion
 
     //region Setters
@@ -89,26 +84,4 @@ public class Usuario {
         this.status = status;
     }
     //endregion
-
-    public boolean adicionarEmprestimo(Emprestimo emprestimo) {
-        if (emprestimo == null) {
-            throw new IllegalArgumentException("Empréstimo não pode ser nulo");
-        }
-        return emprestimos.add(emprestimo);
-    }
-
-    public boolean removerEmprestimo(Emprestimo emprestimo) {
-        return emprestimos.remove(emprestimo);
-    }
-
-    public boolean adicionarReserva(Reserva reserva) {
-        if (reserva == null) {
-            throw new IllegalArgumentException("Reserva não pode ser nula");
-        }
-        return reservas.add(reserva);
-    }
-
-    public boolean removerReserva(Reserva reserva) {
-        return reservas.remove(reserva);
-    }
 }

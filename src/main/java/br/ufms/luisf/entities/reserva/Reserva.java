@@ -1,6 +1,6 @@
 package br.ufms.luisf.entities.reserva;
 
-import br.ufms.luisf.entities.emprestimo.Emprestimo;
+import br.ufms.luisf.entities.exemplar.ExemplarJogo;
 import br.ufms.luisf.validadores.Validar;
 
 import java.time.LocalDateTime;
@@ -18,6 +18,19 @@ public class Reserva {
     LocalDateTime dataCancelamento;
     String observacoes;
 
+    List<ExemplarJogo> exemplares;
+
+    public Reserva(UUID id, UUID usuarioId, UUID jogoId, LocalDateTime dataReserva, StatusReserva status, LocalDateTime dataAtendimento, LocalDateTime dataCancelamento, String observacoes, List<ExemplarJogo> exemplares) {
+        this.id = id;
+        this.dataReserva = dataReserva;
+        this.status = status;
+        this.dataAtendimento = dataAtendimento;
+        this.dataCancelamento = dataCancelamento;
+        this.exemplares = exemplares;
+
+        this(usuarioId, jogoId, observacoes);
+    }
+
     public Reserva(UUID usuarioId, UUID jogoId) {
         this(usuarioId, jogoId, null);
     }
@@ -29,6 +42,7 @@ public class Reserva {
         this.dataReserva = LocalDateTime.now();
         setStatus(StatusReserva.ATIVA);
         setObservacoes(observacoes);
+        exemplares = new ArrayList<>();
     }
 
     //region GETTERS
@@ -65,6 +79,10 @@ public class Reserva {
         return observacoes;
     }
 
+    public List<ExemplarJogo> getExemplares() {
+        return List.copyOf(exemplares);
+    }
+
     //endregion
 
     //region SETTERS
@@ -86,4 +104,12 @@ public class Reserva {
     }
 
     //endregion
+
+    public boolean adicionarExemplar(ExemplarJogo exemplar) {
+        return exemplares.add(exemplar);
+    }
+
+    public boolean removerExemplar(ExemplarJogo exemplar) {
+        return exemplares.remove(exemplar);
+    }
 }

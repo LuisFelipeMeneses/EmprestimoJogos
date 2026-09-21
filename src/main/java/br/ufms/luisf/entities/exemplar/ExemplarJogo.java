@@ -15,6 +15,13 @@ public class ExemplarJogo {
     StatusExemplar status;
     String observacoes;
 
+    public ExemplarJogo(UUID id, String codigo, UUID jogoId, LocalDateTime dataCadastro, EstadoConservacaoJogo estadoConservacao, StatusExemplar status, String observacoes) {
+        this.id = id;
+        this.dataCadastro = dataCadastro;
+        this.status = status;
+        this(codigo, jogoId, estadoConservacao, observacoes);
+    }
+
     public ExemplarJogo(String codigo, UUID jogoId, EstadoConservacaoJogo estadoConservacao) {
         this(codigo, jogoId, estadoConservacao, null);
     }

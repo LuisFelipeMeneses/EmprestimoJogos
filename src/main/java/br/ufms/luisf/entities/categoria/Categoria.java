@@ -9,6 +9,11 @@ public class Categoria {
     String nome;
     String descricao;
 
+    public Categoria(UUID id, String nome, String descricao) {
+        this.id = id;
+        this(nome, descricao);
+    }
+
     public Categoria(String nome) {
         this(nome, null);
     }
