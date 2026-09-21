@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class ExemplarJogo {
-    UUID id;
-    String codigo;
-    UUID jogoId;
-    LocalDateTime dataCadastro;
-    EstadoConservacaoJogo estadoConservacao;
-    StatusExemplar status;
-    String observacoes;
+    private UUID id;
+    private String codigo;
+    private UUID jogoId;
+    private LocalDateTime dataCadastro;
+    private EstadoConservacaoJogo estadoConservacao;
+    private StatusExemplar status;
+    private String observacoes;
 
     public ExemplarJogo(UUID id, String codigo, UUID jogoId, LocalDateTime dataCadastro, EstadoConservacaoJogo estadoConservacao, StatusExemplar status, String observacoes) {
         this.id = id;

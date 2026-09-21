@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.UUID;
 
 public class Usuario {
-    UUID id;
-    String nome;
-    String email;
-    String telefone;
-    LocalDateTime dataCadastro;
-    StatusUsuario status;
+    private UUID id;
+    private String nome;
+    private String email;
+    private String telefone;
+    private LocalDateTime dataCadastro;
+    private StatusUsuario status;
 
     public Usuario(UUID id, String nome, String email, String telefone, LocalDateTime dataCadastro, StatusUsuario status) {
         this.id = id;

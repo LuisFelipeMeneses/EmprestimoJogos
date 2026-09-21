@@ -7,13 +7,13 @@ import java.util.List;
 import java.util.UUID;
 
 public class Emprestimo {
-    UUID id;
-    UUID usuarioId;
-    LocalDateTime dataEmprestimo;
-    LocalDateTime dataPrevistaDevolucao;
-    LocalDateTime dataDevolucao;
-    StatusEmprestimo status;
-    String observacoes;
+    private UUID id;
+    private UUID usuarioId;
+    private LocalDateTime dataEmprestimo;
+    private LocalDateTime dataPrevistaDevolucao;
+    private LocalDateTime dataDevolucao;
+    private StatusEmprestimo status;
+    private String observacoes;
 
     public Emprestimo(UUID id, UUID usuarioId, LocalDateTime dataEmprestimo, LocalDateTime dataPrevistaDevolucao, LocalDateTime dataDevolucao, StatusEmprestimo status, String observacoes) {
         this.id = id;

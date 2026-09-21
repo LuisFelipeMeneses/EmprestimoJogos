@@ -10,18 +10,18 @@ import java.util.List;
 import java.util.UUID;
 
 public class Jogo {
-    UUID id;
-    String nome;
-    String descricao;
-    int numeroMinimoJogadores;
-    int numeroMaximoJogadores;
-    int idadeMinima;
-    int duracaoMinima;
-    int duracaoMaxima;
-    int anoLancamento;
-    String editora;
-    LocalDateTime dataCadastro;
-    boolean ativo;
+    private UUID id;
+    private String nome;
+    private String descricao;
+    private int numeroMinimoJogadores;
+    private int numeroMaximoJogadores;
+    private int idadeMinima;
+    private int duracaoMinima;
+    private int duracaoMaxima;
+    private int anoLancamento;
+    private String editora;
+    private LocalDateTime dataCadastro;
+    private boolean ativo;
 
     public Jogo(UUID id, String nome, String descricao, int numeroMinimoJogadores, int numeroMaximoJogadores, int idadeMinima, int duracaoMinima, int duracaoMaxima, int anoLancamento, String editora, LocalDateTime dataCadastro, boolean ativo) {
         this.id = id;

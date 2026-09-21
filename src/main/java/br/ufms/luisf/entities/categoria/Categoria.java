@@ -5,9 +5,9 @@ import br.ufms.luisf.validadores.Validar;
 import java.util.UUID;
 
 public class Categoria {
-    UUID id;
-    String nome;
-    String descricao;
+    private UUID id;
+    private String nome;
+    private String descricao;
 
     public Categoria(UUID id, String nome, String descricao) {
         this.id = id;

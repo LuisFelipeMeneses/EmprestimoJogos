@@ -9,16 +9,15 @@ import java.util.List;
 import java.util.UUID;
 
 public class Reserva {
-    UUID id;
-    UUID usuarioId;
-    UUID jogoId;
-    LocalDateTime dataReserva;
-    StatusReserva status;
-    LocalDateTime dataAtendimento;
-    LocalDateTime dataCancelamento;
-    String observacoes;
-
-    List<ExemplarJogo> exemplares;
+    private UUID id;
+    private UUID usuarioId;
+    private UUID jogoId;
+    private LocalDateTime dataReserva;
+    private StatusReserva status;
+    private LocalDateTime dataAtendimento;
+    private LocalDateTime dataCancelamento;
+    private String observacoes;
+    private List<ExemplarJogo> exemplares;
 
     public Reserva(UUID id, UUID usuarioId, UUID jogoId, LocalDateTime dataReserva, StatusReserva status, LocalDateTime dataAtendimento, LocalDateTime dataCancelamento, String observacoes, List<ExemplarJogo> exemplares) {
         this.id = id;
